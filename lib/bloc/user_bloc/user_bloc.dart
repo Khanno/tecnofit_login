@@ -14,14 +14,21 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   UserBloc({required this.userService}) : super(UserInitial()) {
     on<GetUserInformation>((event, emit) => _getUserInformation(event, emit));
+    on<UpdateUserInformation>((event, emit) => _updateUserInformation(event, emit));
   }
 
   void _getUserInformation(GetUserInformation event, Emitter<UserState> emit) async {
+    emit(LoadingState());
     try {
       final UserModel userData = await userService.getUserInfo();
-      emit(UserState(user: userData));
+      emit(ReadyUserState(user: userData));
     } on DioError catch (e) {
       showToastWithoutContext(message: e.response!.data['error']);
     }
+  }
+
+  void _updateUserInformation(UpdateUserInformation event, Emitter<UserState> emit) {
+    emit(LoadingState());
+    emit(ReadyUserState(user: event.userData));
   }
 }

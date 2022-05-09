@@ -5,7 +5,7 @@ import 'package:tecnofit_login/constants/widget_keys.dart';
 import 'package:tecnofit_login/pages/cover/cover_page.dart';
 import 'package:tecnofit_login/pages/dashboard/dashboard_page.dart';
 import 'package:tecnofit_login/pages/login/login_page.dart';
-import 'package:tecnofit_login/pages/register/bloc/bloc/register_bloc.dart';
+import 'package:tecnofit_login/pages/profile/profile_page.dart';
 import 'package:tecnofit_login/pages/register/register_page.dart';
 import 'package:tecnofit_login/service/regres_service.dart';
 import 'package:tecnofit_login/service/repositories/tecnofit_repository.dart';
@@ -36,6 +36,7 @@ class TecnoLogin extends StatelessWidget {
           '/register': (context) => RegisterPage(),
           '/login': (context) => LoginPage(),
           '/dashboard': (context) => DashboardPage(),
+          '/profile': (context) => ProfilePage(),
         },
       ),
     );

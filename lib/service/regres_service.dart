@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:tecnofit_login/models/login_model.dart';
 import 'package:tecnofit_login/models/new_user_model.dart';
 import 'package:tecnofit_login/models/new_user_response.dart';
 import 'package:tecnofit_login/service/repositories/regres_repository.dart';
@@ -19,6 +20,11 @@ class RegresService {
 
   Future<NewUserResponse?> registerNewUser({required NewUserModel userDetails}) async {
     final NewUserResponse? response = await regresRepository.registerNewUser(userDetails: userDetails);
+    return response;
+  }
+
+  Future<String?> loginWithEmail({required LoginModel loginModel}) async {
+    final String? response = await regresRepository.loginWithEmail(loginModel: loginModel);
     return response;
   }
 }

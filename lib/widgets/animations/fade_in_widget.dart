@@ -11,7 +11,7 @@ class FadeInWidget extends StatefulWidget {
 
 class _FadeInWidgetState extends State<FadeInWidget> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    duration: const Duration(seconds: 2),
+    duration: const Duration(milliseconds: 750),
     vsync: this,
   );
 

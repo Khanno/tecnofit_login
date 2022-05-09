@@ -48,9 +48,64 @@ class ErrorTextFormFieldTextStyle extends TextStyle {
 
   TextStyle style({Color? color, FontWeight? fontWeight}) {
     return GoogleFonts.nunito(
-      color: color ?? Colors.red,
+      color: color ?? Colors.red[200]!,
+      fontWeight: fontWeight ?? FontWeight.bold,
+      fontSize: 16,
+    );
+  }
+}
+
+class LoginTextWidgetTextStyle extends TextStyle {
+  final BuildContext context;
+  const LoginTextWidgetTextStyle({required this.context});
+
+  TextStyle style({Color? color, FontWeight? fontWeight}) {
+    return GoogleFonts.nunito(
+      color: color ?? Colors.white,
       fontWeight: fontWeight ?? FontWeight.bold,
       fontSize: 20,
+    );
+  }
+}
+
+class AppBarTextStyle extends TextStyle {
+  final BuildContext context;
+  const AppBarTextStyle({required this.context});
+
+  TextStyle style({Color? color, FontWeight? fontWeight, double? fontSize, TextDecoration? textDecoration}) {
+    return GoogleFonts.nunito(
+      color: color ?? Colors.white,
+      fontWeight: fontWeight ?? FontWeight.bold,
+      fontSize: fontSize ?? 20,
+      decoration: textDecoration ?? TextDecoration.none,
+    );
+  }
+}
+
+class ProfilePageTextStyle extends TextStyle {
+  final BuildContext context;
+  const ProfilePageTextStyle({required this.context});
+
+    TextStyle style({Color? color, FontWeight? fontWeight, double? fontSize, TextDecoration? textDecoration}) {
+    return GoogleFonts.nunito(
+      color: color ?? Colors.black,
+      fontWeight: fontWeight ?? FontWeight.bold,
+      fontSize: fontSize ?? 17,
+      decoration: textDecoration ?? TextDecoration.none,
+    );
+  }
+}
+
+class DashboardPageTextStyle extends TextStyle {
+  final BuildContext context;
+  const DashboardPageTextStyle({required this.context});
+
+  TextStyle style({Color? color, FontWeight? fontWeight, double? fontSize, TextDecoration? textDecoration}) {
+    return GoogleFonts.nunito(
+      color: color ?? Colors.black,
+      fontWeight: fontWeight ?? FontWeight.bold,
+      fontSize: fontSize ?? 17,
+      decoration: textDecoration ?? TextDecoration.none,
     );
   }
 }

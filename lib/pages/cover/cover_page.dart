@@ -11,7 +11,7 @@ class CoverPage extends StatefulWidget {
 
 class _CoverPageState extends State<CoverPage> with TickerProviderStateMixin {
   late final AnimationController _controller = AnimationController(
-    duration: const Duration(seconds: 1),
+    duration: const Duration(milliseconds: 750),
     vsync: this,
   );
 

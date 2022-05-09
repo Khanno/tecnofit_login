@@ -10,8 +10,21 @@ class MainButtonWidget extends StatelessWidget {
   final Color? borderColor;
   final Color? shadowColor;
   final Widget? child;
+  final double? paddingHeight;
+  final double? paddingWidth;
 
-  MainButtonWidget({required this.onTap, this.key, this.text, this.height, this.width, this.borderColor, this.shadowColor, this.child});
+  MainButtonWidget({
+    required this.onTap,
+    this.key,
+    this.text,
+    this.height,
+    this.width,
+    this.borderColor,
+    this.shadowColor,
+    this.child,
+    this.paddingHeight,
+    this.paddingWidth,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,25 +33,28 @@ class MainButtonWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.background,
-          borderRadius: BorderRadius.circular(50),
-          border: Border.all(color: borderColor ?? Colors.black, width: 0.5),
-          boxShadow: [BoxShadow(
-            blurRadius: 2,
-            offset: const Offset(5, 7),
-            spreadRadius: 1.0,
-            color: shadowColor ?? Colors.black.withOpacity(0.1),
-          )]
-        ),
-        height: MediaQuery.of(context).size.height * 0.05,
-        width: MediaQuery.of(context).size.width * 0.4,
+            color: Theme.of(context).colorScheme.background,
+            borderRadius: BorderRadius.circular(50),
+            border: Border.all(color: borderColor ?? Colors.black, width: 0.5),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 2,
+                offset: const Offset(5, 7),
+                spreadRadius: 1.0,
+                color: shadowColor ?? Colors.black.withOpacity(0.1),
+              )
+            ]),
+        height: height ?? MediaQuery.of(context).size.height * 0.05,
+        width: width ?? MediaQuery.of(context).size.width * 0.4,
         alignment: Alignment.center,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: width ?? 0, vertical: height ?? 0),
-          child: text != null ? Text(
-            text!,
-            style: MainButtonTextStyle(context: context).style(fontWeight: FontWeight.w700),
-          ) : child,
+          padding: EdgeInsets.symmetric(horizontal: paddingWidth ?? 0, vertical: paddingHeight ?? 0),
+          child: text != null
+              ? Text(
+                  text!,
+                  style: MainButtonTextStyle(context: context).style(fontWeight: FontWeight.w700),
+                )
+              : child,
         ),
       ),
     );
