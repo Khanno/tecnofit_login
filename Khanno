@@ -1,6 +1,6 @@
 # TecnoLogin
 ## About
-This project uses Flutter version 2.5.2, so to be able to run without errors and problems use the correct version. Downgrade or upgrade your version to 2.5.2 using the following command: ```flutter dongrade 2.5.2```
+This project uses Flutter version 2.5.2, so to be able to run without errors and problems use the correct version. Downgrade or upgrade your version to 2.5.2 using the following command: ```flutter downgrade 2.5.2```
 If for some reason the command above doesn't work, you can try the following:
 1. Go to the your flutter sdk folder using your terminal
 2. Use the following command line: ```git checkout 2.5.2```
